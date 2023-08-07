@@ -1,17 +1,14 @@
-// tu almacen - carrito de compra
-// que funcionalidad debe tener un carrito de compras?
+// ferreteria online consta de los siguientes funcionamientos
 
-//1 debe mostrar productos de forma dinamica
-//2 debe agregar productos al carrito.
-//3 evitar la carga de productos repetidos en el carrito
-//4 mostrar el carrito en el html
-//5 eliminar productos del carrito
-//6 calcular el total de la compra
-//7 vaciar el carrito de compras
-//8 almacenar carrito en el local sotarage
-
-//9 boton finalizar compra
-//10 cambiar cantidaddes de productos en el carrito
+//  agregar productos al carrito.
+//  mostrar productos de forma dinamica
+//  mostrar el carrito en el html
+//  eliminar productos del carrito
+//  calcular el total de la compra
+//  vaciar el carrito de compras
+//  almacenar carrito en el local sotarage
+//  ver la factura de los productos en el carrito
+//  evitar la carga de productos repetidos en el carrito
 
 class Producto{
     constructor(id,nombre,precio,img){
@@ -193,11 +190,11 @@ const mostrarFactura = () => {
     totalFactura.textContent = `Total: $${calcularTotalCompra()}`;
     factura.appendChild(totalFactura);
 };
-
-const calcularTotalCompra = () => {
-    let totalCompra = 0;
-    carrito.forEach(producto => {
-        totalCompra += producto.precio * producto.cantidad;
-    });
-    return totalCompra;
-};
+    //calculamos total para la seccion factura
+    const calcularTotalCompra = () => {
+        let totalCompra = 0;
+        carrito.forEach(producto => {
+            totalCompra += producto.precio * producto.cantidad;
+        });
+        return totalCompra;
+    };
